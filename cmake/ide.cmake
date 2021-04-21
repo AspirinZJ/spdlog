@@ -3,13 +3,15 @@
 # ---------------------------------------------------------------------------------------
 set(SPDLOG_HEADERS_DIR "${CMAKE_CURRENT_LIST_DIR}/../include")
 
+# file(GLOB variable [RELATIVE path] [globbingexpressions]…)
+# 使用该文件操作命令时，相对路径的书写最前面不要加任何修饰，
 file(GLOB SPDLOG_TOP_HEADERS "${SPDLOG_HEADERS_DIR}/spdlog/*.h")
 file(GLOB SPDLOG_DETAILS_HEADERS "${SPDLOG_HEADERS_DIR}/spdlog/details/*.h")
 file(GLOB SPDLOG_SINKS_HEADERS "${SPDLOG_HEADERS_DIR}/spdlog/sinks/*.h")
 file(GLOB SPDLOG_FMT_HEADERS "${SPDLOG_HEADERS_DIR}/spdlog/fmt/*.h")
 file(GLOB SPDLOG_FMT_BUNDELED_HEADERS "${SPDLOG_HEADERS_DIR}/spdlog/fmt/bundled/*.h")
 set(SPDLOG_ALL_HEADERS ${SPDLOG_TOP_HEADERS} ${SPDLOG_DETAILS_HEADERS} ${SPDLOG_SINKS_HEADERS} ${SPDLOG_FMT_HEADERS}
-                       ${SPDLOG_FMT_BUNDELED_HEADERS})
+        ${SPDLOG_FMT_BUNDELED_HEADERS})
 
 source_group("Header Files\\spdlog" FILES ${SPDLOG_TOP_HEADERS})
 source_group("Header Files\\spdlog\\details" FILES ${SPDLOG_DETAILS_HEADERS})
